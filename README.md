@@ -113,7 +113,7 @@ The main downside is that **a ground-truth model of the environment is usually n
 
 **VPG:** *Vanilla Policy Gradient* is the most basic, entry-level algorithm in the deep RL space because it completely predates the advent of deep RL altogether: **VPG$\rightarrow$TRPO$\rightarrow$PPO**.
 
-**On-Policy:** It means that these algorithms don't use **old data**( $\rightarrow$ deficit on sample efficiency ), they directly optimize the objective you care about—policy performance. These Algorithms are always trading off sample efficiency in favor of stability.
+**On-Policy:** It means that these algorithms don't use **old data**,which makes them weaker on sample efficiency.( $\rightarrow$ deficit on sample efficiency ), they directly optimize the objective you care about—policy performance. These Algorithms are always trading off sample efficiency in favor of stability.
 
 ### The Off-Policy Algorithms
 
@@ -124,6 +124,8 @@ The theory of deterministic policy gradients $\rightarrow$ **DDPG**$\rightarrow$
 Q-Learning: Q-function&Policy
 
 **Off-Policy:**  reuse old data very effectively by exploiting Bellman's equation
+
+But problematically, there are no guarantees that doing a good job of satisfying Bellman’s equations leads to having great policy performance$\rightarrow$makes algorithms in this class potentially brittle and unstable.
 
 
 
